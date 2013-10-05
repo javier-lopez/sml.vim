@@ -39,3 +39,7 @@ Usage
 
 On .sml files you can execute *:make* to run your current buffer on SML, it also indent and shows
 SML sintaxis. See `:help sml-coursera.txt` for detailed information
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chilicuil/vim-sml-coursera/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
