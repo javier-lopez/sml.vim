@@ -38,4 +38,4 @@ Usage
 -----
 
 On .sml files you can execute *:make* to run your current buffer on SML, it also indent and shows
-SML sintaxis.
+SML sintaxis. See `:help sml-coursera.txt` for detailed information
