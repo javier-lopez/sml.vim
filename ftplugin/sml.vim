@@ -20,10 +20,26 @@ if exists("loaded_matchit")
      \  ',(:),\[:\],{:},<:>'
 endif
 
-if exists("sml_coursera_interactive")
-    setlocal makeprg=sml\ '%'
+if has('win32')
+    let s:clear_cmd='cls && '
 else
-    setlocal makeprg=sml\ <'%'
+    let s:clear_cmd='clear && '
+endif
+
+if exists("sml_coursera_interactive")
+    if exists("sml_coursera_clean_output")
+        let &makeprg=s:clear_cmd . "sml %"
+        "setlocal makeprg=clear_cmd;\ sml\ '%'
+    else
+        setlocal makeprg=sml\ '%'
+    endif
+else
+    if exists("sml_coursera_clean_output")
+        let &makeprg=s:clear_cmd . "sml <%"
+        "setlocal makeprg=s:clear_cmd;\ sml\ <'%'
+    else
+        setlocal makeprg=sml\ <'%'
+    endif
 endif
 
 cnoreabbrev make make!

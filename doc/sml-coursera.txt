@@ -49,6 +49,13 @@ Values: 0 or 1.
 Default: 0.
 
     let sml_coursera_interactive=0
+------------------------------------------------------------------------------
+'sml_coursera_clean_output'           clean result window after every :make
+                                      invocation.
+Values: 0 or 1.
+Default: 0.
+
+    let sml_coursera_clean_output=0
 
 ==============================================================================
 4. License                                                *SmlCourseraLicense*
