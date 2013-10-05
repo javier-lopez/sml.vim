@@ -20,4 +20,10 @@ if exists("loaded_matchit")
      \  ',(:),\[:\],{:},<:>'
 endif
 
-setlocal makeprg=sml\ -P\ full\ '%'
+if exists("sml_coursera_interactive")
+    setlocal makeprg=sml\ '%'
+else
+    setlocal makeprg=sml\ <'%'
+endif
+
+cnoreabbrev make make!

@@ -39,7 +39,16 @@ also indent and shows SML sintaxis.
 ==============================================================================
 3. Configuration                                           *SmlCourseraConfig*
 
-No configuration settings yet
+These options should be set in your .vimrc file.
+
+------------------------------------------------------------------------------
+'sml_coursera_interactive'            source the current file and stay in sml
+                                      till it gets finished manually by the
+                                      user.
+Values: 0 or 1.
+Default: 0.
+
+    let sml_coursera_interactive=0
 
 ==============================================================================
 4. License                                                *SmlCourseraLicense*
