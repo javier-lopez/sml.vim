@@ -8,6 +8,7 @@ Requirements
 ------------
 
 * Vim 7.0+
+* Vundle (VIM plugin manager) https://github.com/gmarik/vundle
 * SML http://www.smlnj.org/dist/working/110.76/
 
 Installation
