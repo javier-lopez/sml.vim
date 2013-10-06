@@ -13,7 +13,7 @@ Requirements
 Installation
 ------------
 
-[Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
+- [Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
 
     Bundle 'chilicuil/vim-sml-coursera'
 
@@ -21,11 +21,11 @@ And run inside of vim:
 
     :BundleInstall
 
-[Pathogen](https://github.com/tpope/vim-pathogen) way:
+- [Pathogen](https://github.com/tpope/vim-pathogen) way:
 
     $ git clone https://github.com/chilicuil/vim-sml-coursera.git ~/.vim/bundle/vim-sml-coursera
 
-*Manual* (simplest if you've never heard of vundle or pathogen), download the zip file generated from github and extract it to $HOME/.vim
+- **Manual** (simplest if you've never heard of vundle or pathogen), download the zip file generated from github and extract it to $HOME/.vim
 
     mv vim-sml-coursera*.zip $HOME/.vim
     cd $HOME/.vim && unzip vim-sml-coursera*.zip
