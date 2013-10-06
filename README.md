@@ -13,7 +13,7 @@ Requirements
 Installation
 ------------
 
-[Vundle way](https://github.com/gmarik/vundle) (recommended), add the following to your $HOME/.vimrc file:
+[Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
 
     Bundle 'chilicuil/vim-sml-coursera'
 
