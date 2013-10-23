@@ -15,24 +15,24 @@ Installation
 
 - [Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
 
-    Bundle 'chilicuil/vim-sml-coursera'
+        Bundle 'chilicuil/vim-sml-coursera'
 
-And run inside of vim:
+    And run inside of vim:
 
-    :BundleInstall
+        :BundleInstall
 
 - [Pathogen](https://github.com/tpope/vim-pathogen) way:
 
-    $ git clone https://github.com/chilicuil/vim-sml-coursera.git ~/.vim/bundle/vim-sml-coursera
+        $ git clone https://github.com/chilicuil/vim-sml-coursera.git ~/.vim/bundle/vim-sml-coursera
 
 - **Manual** (simplest if you've never heard of vundle or pathogen), download the zip file generated from github and extract it to $HOME/.vim
 
-    mv vim-sml-coursera*.zip $HOME/.vim
-    cd $HOME/.vim && unzip vim-sml-coursera*.zip
+        mv vim-sml-coursera*.zip $HOME/.vim
+        cd $HOME/.vim && unzip vim-sml-coursera*.zip
 
-Update the help tags from vim:
+    Update the help tags from vim:
 
-    :helpt ~/.vim/doc/
+        :helpt ~/.vim/doc/
 
 Usage
 -----
@@ -75,6 +75,8 @@ There are some differences (features) from standard Vim 7.4 files.
 - Fix highlighting of `=>`, `:=`.
 
 - Highlight record fields in type declaration, record creation and record patterns.
+
+_These features are also available as [independent plugin](https://github.com/cypok/vim-sml)._
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chilicuil/vim-sml-coursera/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
