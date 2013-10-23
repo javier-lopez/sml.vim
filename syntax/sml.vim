@@ -44,7 +44,7 @@ syn cluster  smlAllErrs contains=smlBraceErr,smlBrackErr,smlParenErr,smlCommentE
 
 syn cluster  smlAENoParen contains=smlBraceErr,smlBrackErr,smlCommentErr,smlEndErr,smlThenErr
 
-syn cluster  smlContained contains=smlTodo,smlPreDef,smlModParam,smlModParam1,smlPreMPRestr,smlMPRestr,smlMPRestr1,smlMPRestr2,smlMPRestr3,smlModRHS,smlFuncWith,smlFuncStruct,smlModTypeRestr,smlModTRWith,smlWith,smlWithRest,smlModType,smlFullMod
+syn cluster  smlContained contains=smlTodo,smlPreDef,smlModParam,smlModParam1,smlPreMPRestr,smlMPRestr,smlMPRestr1,smlMPRestr2,smlMPRestr3,smlModRHS,smlFuncWith,smlFuncStruct,smlModTypeRestr,smlModTRWith,smlWith,smlWithRest,smlModType,smlFullMod,smlRecordField
 
 
 " Enclosing delimiters
@@ -57,7 +57,6 @@ syn region   smlEncl transparent matchgroup=smlKeyword start="#\[" matchgroup=sm
 " Comments
 syn region   smlComment start="(\*" end="\*)" contains=smlComment,smlTodo
 syn keyword  smlTodo contained TODO FIXME XXX
-
 
 " let
 syn region   smlEnd matchgroup=smlKeyword start="\<let\>" matchgroup=smlKeyword end="\<end\>" contains=ALLBUT,@smlContained,smlEndErr
@@ -74,6 +73,8 @@ syn region   smlEnd matchgroup=smlKeyword start="\<begin\>" matchgroup=smlKeywor
 " if
 syn region   smlNone matchgroup=smlKeyword start="\<if\>" matchgroup=smlKeyword end="\<then\>" contains=ALLBUT,@smlContained,smlThenErr
 
+" record fields inside of record
+syn region   smlRecord transparent matchgroup=smlKeyword start="{" matchgroup=smlKeyword end="}"  contains=smlRecordField
 
 "" Modules
 
@@ -141,20 +142,22 @@ syn match    smlCharacter    +#"\\""\|#"."\|#"\\\d\d\d"+
 syn match    smlCharErr      +#"\\\d\d"\|#"\\\d"+
 syn region   smlString       start=+"+ skip=+\\\\\|\\"+ end=+"+
 
+syn match    smlKeyChar      "="
+syn match    smlKeyChar      "!"
+syn match    smlKeyChar      ";"
+syn match    smlKeyChar      "\*"
 syn match    smlFunDef       "=>"
 syn match    smlRefAssign    ":="
 syn match    smlTopStop      ";;"
 syn match    smlOperator     "\^"
 syn match    smlOperator     "::"
 syn match    smlAnyVar       "\<_\>"
-syn match    smlKeyChar      "!"
-syn match    smlKeyChar      ";"
-syn match    smlKeyChar      "\*"
-syn match    smlKeyChar      "="
 
 syn match    smlNumber	      "\<-\=\d\+\>"
 syn match    smlNumber	      "\<-\=0[x|X]\x\+\>"
 syn match    smlReal	      "\<-\=\d\+\.\d*\([eE][-+]\=\d\+\)\=[fl]\=\>"
+
+syn match    smlRecordField   "\<\w\+\>\(\s*[=:]\)\@=" contained
 
 " Synchronization
 syn sync minlines=20
@@ -212,6 +215,8 @@ if version >= 508 || !exists("did_sml_syntax_inits")
   HiLink smlAnyVar	 Keyword
   HiLink smlTopStop	 Keyword
   HiLink smlOperator	 Keyword
+
+  HiLink smlRecordField  Identifier
 
   HiLink smlBoolean	 Boolean
   HiLink smlCharacter	 Character
