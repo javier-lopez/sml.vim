@@ -23,7 +23,7 @@ setlocal indentexpr=GetSMLIndent()
 setlocal indentkeys+=0=and,0=else,0=end,0=handle,0=if,0=in,0=let,0=then,0=val,0=fun,0=\|,0=*),0)
 setlocal nolisp
 setlocal nosmartindent
-setlocal textwidth=80
+setlocal textwidth=0
 setlocal shiftwidth=2
 
 " Comment formatting
@@ -73,7 +73,9 @@ endfunction
 
 " Indent pairs
 function! s:FindPair(pstart, pmid, pend)
-  call search(a:pend, 'bW')
+  if mode() == 'i'
+    call search(a:pend, 'bW')
+  endif
 "  return indent(searchpair(a:pstart, a:pmid, a:pend, 'bWn', 'synIDattr(synID(line("."), col("."), 0), "name") =~? "string\\|comment"'))
   let lno = searchpair(a:pstart, a:pmid, a:pend, 'bW', 'synIDattr(synID(line("."), col("."), 0), "name") =~? "string\\|comment"')
   if lno == -1
@@ -84,7 +86,9 @@ function! s:FindPair(pstart, pmid, pend)
 endfunction
 
 function! s:FindLet(pstart, pmid, pend)
-  call search(a:pend, 'bW')
+  if mode() == 'i'
+    call search(a:pend, 'bW')
+  endif
 "  return indent(searchpair(a:pstart, a:pmid, a:pend, 'bWn', 'synIDattr(synID(line("."), col("."), 0), "name") =~? "string\\|comment"'))
   let lno = searchpair(a:pstart, a:pmid, a:pend, 'bW', 'synIDattr(synID(line("."), col("."), 0), "name") =~? "string\\|comment"')
   let moduleLine = getline(lno)
@@ -114,7 +118,7 @@ function! GetSMLIndent()
   let lline = getline(lnum)
 
 	" Return double 'shiftwidth' after lines matching:
-	if lline =~ '^\s*|.*=>\s*$'
+  if lline =~ '^\s*|.*=>\?\s*$'
 		return ind + &sw + &sw
 	elseif lline =~ '^\s*val\>.*=\s*$'
 		return ind + &sw
@@ -128,19 +132,11 @@ function! GetSMLIndent()
 
 	" Match 'else' with 'if'
 	elseif line =~ '^\s*else\>'
-	  	if lline !~ '^\s*\(if\|else\|then\)\>'
-				return s:FindPair('\<if\>', '', '\<then\>')
-	  	else
-		  return ind
-		endif
+    return s:FindPair('\<if\>', '', '\<else\>')
 
 	" Match 'then' with 'if'
 	elseif line =~ '^\s*then\>'
-  	if lline !~ '^\s*\(if\|else\|then\)\>'
-		  return s:FindPair('\<if\>', '', '\<then\>')
-	else
-	  return ind
-	endif
+    return s:FindPair('\<if\>', '', '\<then\>')
 
 	" Indent if current line begins with ']'
 	elseif line =~ '^\s*\]'
@@ -170,9 +166,10 @@ function! GetSMLIndent()
 		  return ind
 		endif
 		if switchLine =~ '\<case\>'
-			return col(".") + 2
+			return col(".") -1
 		elseif switchLine =~ '\<handle\>'
-			return switchLineIndent + &sw
+      call search('\<handle\>')
+      return col(".") + 4
 		elseif switchLine =~ '\<datatype\>'
 			call search('=')
 			return col(".") - 1
@@ -180,6 +177,9 @@ function! GetSMLIndent()
 			return switchLineIndent + 2
 		endif
 
+  " Indent 'handle'
+  elseif line =~ '^\s*handle'
+    let ind = ind + &sw
 
   " Indent if last line ends with 'sig', 'struct', 'let', 'then', 'else',
   " 'in'
@@ -189,7 +189,7 @@ function! GetSMLIndent()
   " Indent if last line ends with 'of', align from 'case'
   elseif lline =~ '\<\(of\)\s*$'
 		call search('\<case\>',"bW")
-		let ind = col(".")+4
+		let ind = col(".")+1
 
 	" Indent if current line starts with 'of'
   elseif line =~ '^\s*of\>'
@@ -202,13 +202,6 @@ function! GetSMLIndent()
 		let ind = ind + &sw
 
 	endif
-
-	" Don't indent 'let' if last line started with 'fun', 'fn'
-	if line =~ '^\s*let\>'
-		if lline =~ '^\s*\(fun\|fn\)'
-			let ind = ind - &sw
-		endif
-  endif
 
   return ind
 
