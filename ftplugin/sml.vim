@@ -31,14 +31,14 @@ if exists("sml_coursera_interactive")
         let &makeprg=s:clear_cmd . "sml %"
         "setlocal makeprg=clear_cmd;\ sml\ '%'
     else
-        setlocal makeprg=sml\ '%'
+        setlocal makeprg=sml\ \"%\"
     endif
 else
     if exists("sml_coursera_clean_output")
         let &makeprg=s:clear_cmd . "sml <%"
         "setlocal makeprg=s:clear_cmd;\ sml\ <'%'
     else
-        setlocal makeprg=sml\ <'%'
+        setlocal makeprg=sml\ <\"%\"
     endif
 endif
 
