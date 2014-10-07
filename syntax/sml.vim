@@ -170,6 +170,10 @@ syn sync match smlStructSync  groupthere smlStruct  "\<end\>"
 syn sync match smlSigSync     grouphere  smlSig     "\<sig\>"
 syn sync match smlSigSync     groupthere smlSig     "\<end\>"
 
+" Bindings (function names and 'val' bindings) are just lowercase identifiers
+" which follow a `fun` or `val` keyword.
+syn match smlBinding "\(\(fun\|val\)\s\+\)\@<=[a-z][a-z0-9_]\+"
+
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
@@ -184,6 +188,8 @@ if version >= 508 || !exists("did_sml_syntax_inits")
   HiLink smlBraceErr	 Error
   HiLink smlBrackErr	 Error
   HiLink smlParenErr	 Error
+
+  HiLink smlBinding	 Identifier
 
   HiLink smlCommentErr	 Error
 
