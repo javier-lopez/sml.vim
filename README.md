@@ -76,8 +76,4 @@ There are some differences (features) from standard Vim 7.4 files.
 
 - Highlight record fields in type declaration, record creation and record patterns.
 
-_These features are also available as [independent plugin](https://github.com/cypok/vim-sml)._
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chilicuil/vim-sml-coursera/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+_These features are also available as an [independent plugin](https://github.com/cypok/vim-sml)._
