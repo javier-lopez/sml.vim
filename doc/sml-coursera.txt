@@ -6,11 +6,10 @@ CONTENTS                                               *SML-coursera-contents*
     1. Intro ........................... |SmlCourseraIntro|
     2. Usage ........................... |SmlCourseraUsage|
     3. Configuration ................... |SmlCourseraConfig|
-    4. License ......................... |SmlCourseraLicense|
-    5. Bugs ............................ |SmlCourseraBugs|
-    6. Contributing .................... |SmlCourseraContributing|
-    7. Changelog ....................... |SmlCourseraChangelog|
-    8. Credits ......................... |SmlCourseraCredits|
+    4. Bugs ............................ |SmlCourseraBugs|
+    5. Contributing .................... |SmlCourseraContributing|
+    6. Changelog ....................... |SmlCourseraChangelog|
+    7. Credits ......................... |SmlCourseraCredits|
 
 ==============================================================================
 1. Intro                                                    *SmlCourseraIntro*
@@ -56,11 +55,6 @@ Values: 0 or 1.
 Default: 0.
 
     let sml_coursera_clean_output=0
-
-==============================================================================
-4. License                                                *SmlCourseraLicense*
-
-MIT
 
 ==============================================================================
 5. Bugs                                                      *SmlCourseraBugs*
