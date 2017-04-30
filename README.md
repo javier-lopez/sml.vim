@@ -1,4 +1,4 @@
-vim-sml-coursera
+sml-coursera.vim
 ================
 
 vim + sml for https://class.coursera.org/proglang-002/class/index
@@ -15,7 +15,7 @@ Installation
 
 - [Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
 
-        Bundle 'chilicuil/vim-sml-coursera'
+        Bundle 'chilicuil/sml-coursera.vim'
 
     And run inside of vim:
 
@@ -23,12 +23,12 @@ Installation
 
 - [Pathogen](https://github.com/tpope/vim-pathogen) way:
 
-        $ git clone https://github.com/chilicuil/vim-sml-coursera.git ~/.vim/bundle/vim-sml-coursera
+        $ git clone https://github.com/chilicuil/sml-coursera.vim.git ~/.vim/bundle/sml-coursera.vim
 
 - **Manual** (simplest if you've never heard of vundle or pathogen), download the zip file generated from github and extract it to $HOME/.vim
 
-        mv vim-sml-coursera*.zip $HOME/.vim
-        cd $HOME/.vim && unzip vim-sml-coursera*.zip
+        mv sml-coursera.vim*.zip $HOME/.vim
+        cd $HOME/.vim && unzip sml-coursera.vim*.zip
 
     Update the help tags from vim:
 

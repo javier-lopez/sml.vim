@@ -23,11 +23,11 @@ http://vim.cybermirror.org/runtime/indent/sml.vim
 http://www.vim.org/scripts/script.php?script_id=3429
 
 I've taken the more IMHO interesting bits of every link and created a vim
-plugin for the course: 
+plugin for the course:
 
     https://class.coursera.org/proglang-002/class/index
     Programming Languages (University of Washington)
-    by Dan Grossman  
+    by Dan Grossman
 
 ==============================================================================
 2. Usage                                                    *SmlCourseraUsage*
@@ -64,7 +64,7 @@ close to the EMACS alternative, let's change that!, during the course I'll
 keep improving the plugin to match the coursera workflow, feel free to pull
 and push improvements!
 
-    https://github.com/chilicuil/vim-sml-coursera
+    https://github.com/chilicuil/sml-coursera.vim
 
 ==============================================================================
 7. Changelog                                            *SmlCourseraChangelog*
