@@ -64,7 +64,7 @@ close to the EMACS alternative, let's change that!, during the course I'll
 keep improving the plugin to match the coursera workflow, feel free to pull
 and push improvements!
 
-    https://github.com/chilicuil/sml-coursera.vim
+    https://github.com/javier-lopez/sml-coursera.vim
 
 ==============================================================================
 7. Changelog                                            *SmlCourseraChangelog*
