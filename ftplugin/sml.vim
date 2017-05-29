@@ -26,15 +26,15 @@ else
     let s:clear_cmd="clear && "
 endif
 
-if exists("sml_coursera_interactive")
-    if exists("sml_coursera_clean_output")
+if exists("sml_interactive")
+    if exists("sml_clean_output")
         let &makeprg=s:clear_cmd . "sml %"
         "setlocal makeprg=clear_cmd;\ sml\ '%'
     else
         setlocal makeprg=sml\ \"%\"
     endif
 else
-    if exists("sml_coursera_clean_output")
+    if exists("sml_clean_output")
         let &makeprg=s:clear_cmd . "sml <%"
         "setlocal makeprg=s:clear_cmd;\ sml\ <'%'
     else

@@ -1,21 +1,20 @@
-sml-coursera.vim
-================
+sml.vim
+=======
 
-vim + sml for https://class.coursera.org/proglang-002/class/index
-
+Sml + vim integration, originally for https://class.coursera.org/proglang-002/class/index
 
 Requirements
 ------------
 
 * Vim 7.0+
-* SML http://www.smlnj.org/dist/working/110.76/
+* Sml http://www.smlnj.org/dist/working/110.76/
 
 Installation
 ------------
 
 - [Vundle](https://github.com/gmarik/vundle) way (recommended), add the following to your $HOME/.vimrc file:
 
-        Bundle 'javier-lopez/sml-coursera.vim'
+        Bundle 'javier-lopez/sml.vim'
 
     And run inside of vim:
 
@@ -23,12 +22,12 @@ Installation
 
 - [Pathogen](https://github.com/tpope/vim-pathogen) way:
 
-        $ git clone https://github.com/javier-lopez/sml-coursera.vim.git ~/.vim/bundle/sml-coursera.vim
+        $ git clone https://github.com/javier-lopez/sml.vim.git ~/.vim/bundle/sml.vim
 
 - **Manual** (simplest if you've never heard of vundle or pathogen), download the zip file generated from github and extract it to $HOME/.vim
 
-        mv sml-coursera.vim*.zip $HOME/.vim
-        cd $HOME/.vim && unzip sml-coursera.vim*.zip
+        mv sml.vim*.zip $HOME/.vim
+        cd $HOME/.vim && unzip sml.vim*.zip
 
     Update the help tags from vim:
 
@@ -37,8 +36,7 @@ Installation
 Usage
 -----
 
-On .sml files you can execute *:make* to run your current buffer on SML, it also indent and shows
-SML sintaxis. See `:help sml-coursera.txt` for detailed information
+On .sml files you can execute *:make* to run your current buffer on SML, it also indent and shows SML sintaxis. See `:help sml.txt` for detailed information.
 
 Indentation & highlighting features
 -----------------------------------

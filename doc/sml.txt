@@ -1,0 +1,68 @@
+*sml.txt*                               Sml syntax,indentation,compilation, etc.
+
+==============================================================================
+CONTENTS                                                          *sml-contents*
+
+    1. Intro ........................... |SmlIntro|
+    2. Usage ........................... |SmlUsage|
+    3. Configuration ................... |SmlConfig|
+    4. Bugs ............................ |SmlBugs|
+    5. Contributing .................... |SmlContributing|
+    6. Changelog ....................... |SmlChangelog|
+    7. Credits ......................... |SmlCredits|
+
+==============================================================================
+1. Intro                                                              *SmlIntro*
+
+This plugin was initially created to follow sml course at:
+
+    https://class.coursera.org/proglang-002/class/index
+    Programming Languages (University of Washington) by Dan Grossman
+
+Since then, it's added additional bits and made it generic enough for general
+sml programming.
+
+==============================================================================
+2. Usage                                                              *SmlUsage*
+
+On `*.sml` files you can execute *:make* to run your current buffer on SML, it
+also indent and shows SML syntax.
+
+==============================================================================
+3. Configuration                                                     *SmlConfig*
+
+These options should be set in your .vimrc file.
+
+------------------------------------------------------------------------------
+'sml_interactive'            source the current file and stay in sml till it
+                             gets finished manually by the user.
+Values: 0 or 1.
+Default: 0.
+
+    let sml_interactive=0
+------------------------------------------------------------------------------
+'sml_clean_output'           clean result window after every :make invocation.
+Values: 0 or 1.
+Default: 0.
+
+    let sml_clean_output=0
+
+==============================================================================
+5. Bugs                                                                *SmlBugs*
+
+Feel free to report bugs at:
+
+    https://github.com/javier-lopez/sml.vim
+
+==============================================================================
+7. Changelog                                                      *SmlChangelog*
+
+v0.0.1
+    * Initial release
+
+==============================================================================
+8. Credits                                                          *SmlCredits*
+
+This plugin is a collection of available SML vim friendly files, I've just
+package them and added minor changes. Look at the links in the readme to find
+original authors.
