@@ -43,3 +43,5 @@ else
 endif
 
 cnoreabbrev make make!
+
+setlocal commentstring=(*%s*)
